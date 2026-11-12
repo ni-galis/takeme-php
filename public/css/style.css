@@ -1,0 +1,582 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+/*------------------------------------*/
+@font-face {
+  font-family: "KaushanScript";
+  src: url(../fonts/KaushanScript-Regular.woff) format("woff");
+  src: url(../fonts/KaushanScript-Regular.woff2) format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Myriad Pro";
+  src: url(../fonts/Myriad\ Pro.woff) format("woff");
+  src: url(../fonts/Myriad\ Pro.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.none {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #000;
+}
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.nav__row {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  min-height: 115px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  position: relative;
+}
+.nav__row::before {
+  content: "";
+  position: absolute;
+  top: 115px;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-color: #d7d7d7;
+  z-index: 1;
+}
+
+.nav__logo {
+  font-size: 48px;
+  font-family: "KaushanScript";
+  color: rgb(62, 198, 255);
+  line-height: 0.1;
+  margin-left: 100px;
+}
+
+.menu-item {
+  margin-right: 110px;
+}
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 45px;
+}
+
+.nav__link {
+  font-size: 18px;
+  font-family: "Roboto";
+  color: rgb(52, 52, 52);
+  line-height: 0.267;
+  text-align: left;
+}
+
+.burger-btn {
+  display: block;
+  width: 30px;
+  height: 18px;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  display: none;
+}
+.burger-btn span {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.burger-btn span:first-child {
+  top: 0;
+}
+.burger-btn span:last-child {
+  top: auto;
+  bottom: 0;
+}
+.burger-btn.active span {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+.burger-btn.active span:first-child {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+.burger-btn.active span:last-child {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: calc(50% - 1px);
+}
+
+.vacation-location__content {
+  max-width: 100%;
+  background-position: 0px 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  min-height: 685px;
+  background-color: #fff;
+  position: relative;
+}
+.vacation-location__content::before {
+  content: "";
+  position: absolute;
+  top: 685px;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-color: #d7d7d7;
+  z-index: 1;
+}
+
+.vacation-location__title {
+  font-size: 47.5px;
+  font-family: "Myriad Pro";
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 242px;
+  letter-spacing: 0.14rem;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 15.8px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 82px;
+}
+
+.vacation-location__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 32px;
+  margin-left: 5px;
+}
+
+.form-inp1 {
+  width: 367px;
+  height: 46px;
+  z-index: 1;
+}
+
+.form-inp2 {
+  width: 268px;
+  height: 46px;
+  z-index: 1;
+}
+
+.form-inp3 {
+  width: 268px;
+  height: 46px;
+  z-index: 1;
+}
+
+.inp {
+  border-width: 2px;
+  border-color: rgb(245, 245, 245);
+  border-style: solid;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 25px;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: rgb(183, 183, 183);
+}
+
+.btn {
+  border-radius: 6px;
+  background-color: rgb(62, 198, 255);
+  width: 172px;
+  height: 46px;
+  z-index: 1;
+}
+
+@media (max-width: 1400px) {
+  .nav__logo {
+    margin-left: 90px;
+  }
+  .menu-item {
+    margin-right: 100px;
+  }
+  .subtitle {
+    margin-bottom: 80px;
+  }
+  .vacation-location__content {
+    max-width: 100%;
+    background-position: -20px 20px;
+  }
+}
+@media (max-width: 1170px) {
+  .nav__logo {
+    margin-left: 50px;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+  .nav__menu {
+    gap: 30px;
+  }
+}
+@media (max-width: 990px) {
+  .nav__menu {
+    gap: 18px;
+  }
+  .nav__logo {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 885px) {
+  .nav__row {
+    min-height: 90px;
+  }
+  .nav__row::before {
+    content: "";
+    position: absolute;
+    top: 90px;
+  }
+  .nav__logo {
+    font-size: 40px;
+  }
+  .nav__link {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .menu-item {
+    display: none;
+  }
+  .burger-btn {
+    display: block;
+    right: 50px;
+  }
+  .menu-item {
+    position: absolute;
+    top: 0;
+    left: -110%;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: #06a70e;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    overflow: auto;
+  }
+  .menu-item.active {
+    left: 0;
+  }
+  .nav__menu {
+    padding: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+    margin: auto;
+  }
+  .nav__item:last-child {
+    margin-bottom: 30px;
+  }
+  .nav__link {
+    display: block;
+    font-size: 40px;
+    line-height: 90px;
+    color: yellow;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .nav__link:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    color: rgb(45, 4, 194);
+    text-decoration: underline;
+  }
+  .search__img {
+    display: none;
+  }
+}
+.vacation-location__content {
+  height: auto;
+}
+
+.vacation-location__title {
+  padding-top: 170px;
+}
+
+.vacation-location__form {
+  padding-bottom: 50px;
+}
+
+@media (max-width: 575px) {
+  .nav__row {
+    min-height: 70px;
+  }
+  .nav__row::before {
+    content: "";
+    position: absolute;
+    top: 70px;
+  }
+  .vacation-location__title {
+    padding-top: 170px;
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  .subtitle {
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+  .form-inp1 {
+    width: 287px;
+    height: 40px;
+    z-index: 1;
+  }
+  .form-inp2 {
+    width: 188px;
+    height: 40px;
+    z-index: 1;
+  }
+  .form-inp3 {
+    width: 188px;
+    height: 40px;
+    z-index: 1;
+  }
+  .btn {
+    width: 92px;
+    height: 40px;
+  }
+  .nav__link {
+    font-size: 35px;
+    line-height: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .nav__row {
+    min-height: 50px;
+  }
+  .nav__row::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    height: 15px;
+  }
+  .nav__logo {
+    font-size: 30px;
+  }
+  .vacation-location__content {
+    background-position: -10px 0px;
+  }
+  .vacation-location__content::before {
+    height: 15px;
+  }
+  .vacation-location__title {
+    padding-top: 150px;
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  .vacation-location__form {
+    gap: 44px;
+    padding: 0 15px;
+  }
+  .form-inp1 {
+    width: 300px;
+    height: 40px;
+    z-index: 1;
+  }
+  .form-inp2 {
+    width: 200px;
+    height: 40px;
+    z-index: 1;
+  }
+  .form-inp3 {
+    width: 200px;
+    height: 40px;
+    z-index: 1;
+  }
+  .btn {
+    width: 92px;
+    height: 40px;
+  }
+  .inp {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .nav__link {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .nav__item:last-child {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 438px) {
+  .menu-item {
+    top: -20px;
+    height: calc(100vh - 350px);
+  }
+  .nav__item:last-child {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 364px) {
+  .vacation-location__form {
+    gap: 30px;
+  }
+  .vacation-location__title {
+    padding-top: 110px;
+    font-size: 35px;
+  }
+  .subtitle {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 320px) {
+  .nav__item:last-child {
+    margin-bottom: 0px;
+  }
+  .menu-item {
+    height: calc(100vh - 90px);
+  }
+  .nav__link {
+    font-size: 25px;
+    line-height: 50px;
+  }
+  .vacation-location__title {
+    line-height: 1;
+  }
+}
